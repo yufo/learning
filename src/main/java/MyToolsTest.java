@@ -71,7 +71,12 @@ public class MyToolsTest {
         String str_1 = "0 30";
         ShouldBe = 165;
         result = myTools.clockArrowsAngle(str_1);
-        System.out.println( "Angle between arrows is " + result + " (deg)" );
+        assertEquals(result, ShouldBe,0.1);
+        System.out.println( "Angle between arrows at 0:30 is " + result + " (deg)" );
+        String str_2 = "6 45";
+        ShouldBe = 67.5;
+        result = myTools.clockArrowsAngle(str_2);
+        System.out.println( "Angle between arrows at 6:45 is " + result + " (deg)" );
         assertEquals(result, ShouldBe,0.1);
     }
 }
