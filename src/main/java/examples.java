@@ -1,14 +1,19 @@
 import java.util.Scanner;
+//import java.io.File;
+import java.io.FileNotFoundException;
 
 public class examples {
 
-    public static void main(String args[]) {
+    public static void main(String args[])
+            throws FileNotFoundException{
 
         // Available methods:
         System.out.println( "1 => isCharactersUnique" );
         System.out.println( "2 => reverseOrderInWords" );
         System.out.println( "3 => stringsArePermutation" );
         System.out.println( "4 => basicStrCompression" );
+        System.out.println( "5 => clockArrowsAngle" );
+
 
 
 
@@ -56,14 +61,14 @@ public class examples {
                 break;
             }
 
-//            case 5: {
-//                System.out.println( "OK, How much time is now?" );
-//                System.out.println( "Type <hh mm> with space between" );
-//                String set1 = keyboard.nextLine();
-//                Double value = myTools.clockArrowsAngle( set1 );
-//                System.out.println( "Angle between arrows (degrees): " + value );
-//                break;
-//            }
+            case 5: {
+                System.out.println( "OK, How much time is now?" );
+                System.out.println( "Type <hh mm> with space between" );
+                String set1 = keyboard.nextLine();
+                Double value = myTools.clockArrowsAngle( set1 );
+                System.out.println( "Angle between arrows (degrees): " + value );
+                break;
+            }
 
             default: {
                 System.out.println( "Unavailable method" );

@@ -1,4 +1,8 @@
 import java.util.Arrays;
+import java.util.Scanner;
+import java.lang.Math;
+
+import java.util.regex.Pattern;
 
 class MyTools {
 
@@ -99,15 +103,27 @@ class MyTools {
         return stb.toString();
     }
 
-//    Double clockArrowsAngle(String str){
-////        short h, m;
-////        h = arg[0];
-////        m = arg[1];
-//        double result = str.split( str )
-//
-//        return 360.0/h;
-//
-//    }
+    Double clockArrowsAngle(String str){
+        Scanner data = new Scanner( str );
+//        Pattern pat = Pattern.compile("[0-9]+");
+        short h, m, maxH = 12;
+        int circle = 360;
+        h = data.nextShort();
+        m = data.nextShort();
+        double angle, c = circle/maxH;
+        double a = c*(h + m/60.0); //Hour's arrow angle
+        int b = 6*m; //Minutes's arrow angle
+        double d = Math.abs(a-b);
+
+        if (d > 180){
+            angle = (360-d);
+        }
+        else {angle = d;}
+
+
+        return Math.abs( angle );
+
+    }
 
 //    private void _print_char_array(char[] arr) {
 //        for (char ch : arr) {
