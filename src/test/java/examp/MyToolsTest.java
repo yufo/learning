@@ -1,4 +1,7 @@
+package examp;
+
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 
@@ -60,5 +63,21 @@ public class MyToolsTest {
         result = myTools.strArePermutation( test2 );
         assertFalse( result );
 
+    }
+
+    @Test
+    public  void test_clockArrowsAngle(){
+        MyTools myTools = new MyTools();
+        double result, ShouldBe;
+        String str_1 = "0 30";
+        ShouldBe = 165;
+        result = myTools.clockArrowsAngle(str_1);
+        assertEquals(result, ShouldBe,0.1);
+        System.out.println( "Angle between arrows at 0:30 is " + result + " (deg)" );
+        String str_2 = "6 45";
+        ShouldBe = 67.5;
+        result = myTools.clockArrowsAngle(str_2);
+        System.out.println( "Angle between arrows at 6:45 is " + result + " (deg)" );
+        assertEquals(result, ShouldBe,0.1);
     }
 }

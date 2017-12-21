@@ -1,12 +1,12 @@
+package examp;
+
 import java.util.Arrays;
 import java.util.Scanner;
 import java.lang.Math;
 
-import java.util.regex.Pattern;
+public class MyTools {
 
-class MyTools {
-
-    Boolean isCharactersUnique(String str) {
+    public Boolean isCharactersUnique(String str) {
         int n, maxl = 256;
         boolean result;
         boolean[] char_set;
@@ -28,7 +28,7 @@ class MyTools {
         return result;
     }
 
-    String reverseOrderInWords(String str) {
+    public String reverseOrderInWords(String str) {
         StringBuilder strb = new StringBuilder();
         StringBuilder wdb = new StringBuilder();
         String s = str.trim();
@@ -49,13 +49,11 @@ class MyTools {
         return wdb.toString();
     }
 
-    Boolean strArePermutation(String[] args) {
+    public Boolean strArePermutation(String[] args) {
 
         if (args[0].length() != args[1].length()) {
             return false;
         }
-//        System.out.println( "1st.0 = "+ args[0] );
-//        System.out.println( "2nd.0 = "+ args[1] );
 
         char[] s1 = _sort_chars( args[0] );
         char[] s2 = _sort_chars( args[1] );
@@ -70,7 +68,7 @@ class MyTools {
 
     }
 
-    String basicStrCompression(String str) {
+    public String basicStrCompression(String str) {
 
         StringBuilder stb = new StringBuilder();
         char current, prev;
@@ -103,7 +101,7 @@ class MyTools {
         return stb.toString();
     }
 
-    Double clockArrowsAngle(String str){
+    public Double clockArrowsAngle(String str){
         Scanner data = new Scanner( str );
 //        Pattern pat = Pattern.compile("[0-9]+");
         short h, m, maxH = 12;
