@@ -1,8 +1,12 @@
 package examp;
 
 import static org.junit.Assert.*;
-//import java.util.Map;
-//import java.util.HashMap;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Set;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -74,23 +78,31 @@ public class MyToolsTest {
     @Test
     public  void test_clockArrowsAngle(){
         MyTools myTools = new MyTools();
-        double result, ShouldBe;
+        double result;
+        // Available methods:
+        Map<String, String> d = new HashMap<String, String>();
 
-        String str_1 = "0 30";
-        ShouldBe = 165;
-        result = myTools.clockArrowsAngle(str_1);
-        assertEquals(result, ShouldBe,0.1);
-        System.out.println( "Angle between arrows at 0:30 is " + result + " (deg)" );
-        String str_2 = "6 45";
-        ShouldBe = 67.5;
-        result = myTools.clockArrowsAngle(str_2);
-        System.out.println( "Angle between arrows at 6:45 is " + result + " (deg)" );
-        assertEquals(result, ShouldBe,0.1);
-        String str_3 = "1 59";
-        ShouldBe = 65.5;
-        result = myTools.clockArrowsAngle(str_3);
-        assertEquals(result, ShouldBe,0.1);
-        System.out.println( "Angle between arrows at 1:59 is " + result + " (deg)" );
+        // Put values in hash map
+        d.put("0 30", "165" );
+        d.put( "6 45", "67.5");
+        d.put( "1 59", "65.5");
+        //Store entry (Key/Value)of HashMap in set
+        Set ms = d.entrySet();
+        //Create iterator on Set
+
+        Iterator mi = ms.iterator();
+        if (mi.hasNext()) {
+            do {
+                Map.Entry mapEntry = (Map.Entry) mi.next();
+                // getKey Method of HashMap access a key of map
+                String keyValue = (String) mapEntry.getKey();
+                //getValue method returns corresponding key's value
+                String value = (String) mapEntry.getValue();
+                result = myTools.clockArrowsAngle( keyValue );
+                System.out.println( "Angle between arrows at " + keyValue + " is " + result + " (deg)" );
+                assertEquals( result, Double.parseDouble( value ), 0.1 );
+            } while (mi.hasNext());
+        }
 
     }
 }
