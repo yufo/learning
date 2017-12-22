@@ -6,7 +6,7 @@
 
     <groupId>my_group</groupId>
     <artifactId>Example</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1_0-SNAPSHOT</version>
     <dependencies>
         <!-- Other dependencies-->
         <dependency>
@@ -40,13 +40,14 @@
                 <version>2.5.1</version>
                 <configuration>
                     <formats>
-                        <format>xml</format>
                         <format>html</format>
+                        <format>xml</format>
                     </formats>
+                    <check/>
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <phase>test</phase>
                         <goals>
                             <goal>cobertura</goal>
                         </goals>

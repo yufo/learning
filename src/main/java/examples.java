@@ -3,6 +3,8 @@ import examp.MyTools;
 import java.util.Scanner;
 //import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class examples {
 
@@ -10,13 +12,20 @@ public class examples {
             throws FileNotFoundException{
 
         // Available methods:
-        System.out.println( "1 => isCharactersUnique" );
-        System.out.println( "2 => reverseOrderInWords" );
-        System.out.println( "3 => stringsArePermutation" );
-        System.out.println( "4 => basicStrCompression" );
-        System.out.println( "5 => clockArrowsAngle" );
+        Map<Integer, String> d = new HashMap<Integer, String>();
+
+        d.put( 1, "1 => isCharactersUnique"  );
+        d.put( 2, "2 => reverseOrderInWords"  );
+        d.put( 3, "3 => stringsArePermutation"  );
+        d.put( 4, "4 => basicStrCompression"  );
+        d.put( 5, "5 => clockArrowsAngle"  );
 
 
+        for (int i = 1; i<=d.size(); i++){
+            String v = d.get(i);
+            System.out.println(v);
+        }
+        System.out.println();
 
 
         Scanner keyboard = new Scanner( System.in );

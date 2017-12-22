@@ -54,8 +54,12 @@ public class MyToolsTest {
     public void test_strArePermutation() {
         MyTools myTools = new MyTools();
         boolean result;
+        String[] test0 = {"qwert", "trewqy"};
         String[] test1 = {"qwert", "trewq"};
         String[] test2 = {"qwert", "asdfc"};
+
+        result = myTools.strArePermutation( test0 );
+        assertFalse( result );
 
         result = myTools.strArePermutation( test1 );
         assertTrue( result );
