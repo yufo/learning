@@ -45,6 +45,7 @@ public class MyToolsTest {
         String test1 = "qwert", return1 = "qwert";
         String test2 = "qqqqq", return2 = "q5";
         String test3 = "abbcccdddd#", return3 = "ab2c3d4#";
+        String test4 = "qqwert#", return4 = "q2wert";
 
         result =  myTools.basicStrCompression(test1);
         assertEquals(return1, result);
@@ -54,6 +55,9 @@ public class MyToolsTest {
 
         result =  myTools.basicStrCompression(test3);
         assertEquals(return3, result);
+
+        result =  myTools.basicStrCompression(test4);
+        assertEquals(return4, result);
     }
 
     @Test
